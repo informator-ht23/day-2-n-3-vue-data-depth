@@ -19,4 +19,5 @@ Målet med dagen är att kunna skapa SPA sidor med Vue Routing och använda fetc
 # Övningar och material
 1. [Gårdagen](https://github.com/informator-ht23/day-1-vue-intro)
 2. [Warmup med vue hooks](exercise/warmup-hooks.md)
-3. [Fetcha i vue](exercise/swapi-fetch.md)
+3. [Routing i vue](exercise/routing.md)
+4. [Fetcha i vue](exercise/fetch.md)
