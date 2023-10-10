@@ -12,13 +12,13 @@ Gör en komponent ( <gdpr /> ) som bara visas första ggn man laddar sidan. Spar
 *Hint*: Samtycke = localstorage.setItem(‘gdpr’, ‘true’)
 
 
-## DEL 2: You shall not pass
-Tekniker: vi-if-else, beforeMounted(), sessionStorage
+## Utmaning 1: You shall not pass
+Tekniker: router, vi-if-else, beforeMounted(), sessionStorage
 
-Gör en view ( <outside /> med en login comp som sparar en session ( auth ). Om session finns får man komma vidare till view:n <inside />. Om ej session finns kastar man tillbaka till <outside /> med hjälp av routern och beforeMounted hooken.
+Gör en view ( <outside /> med en login comp som sparar en session ( auth ). Om session finns får man komma vidare till view:n <inside />. Om ej session finns kastar man tillbaka till <outside /> med hjälp av routern och beforeMounted hooken. Tips, se https://router.vuejs.org/guide/essentials/navigation.html för tips på hur du kan hantera routern i vue.
 
 
-## Utamning 1: You shan't pass
+## Utamning 2: You shan't pass
 Tekniker: vue-router, beforeMounted(), sessionStorage
 
 Gör övning två, men gör så att outside och inside är två olika undersidor till webbsidan.
