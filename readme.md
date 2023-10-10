@@ -12,7 +12,8 @@ Målet med dagen är att kunna skapa SPA sidor med Vue Routing och använda fetc
    2. Göra klart övningar från gårdagen
    3. Warmup 2 - Att använda vue hooks
 * Eftermiddag
-   1. Att skapa http requests
+   1. Att använda routing statiskt och dynamiskt
+   2. Att skapa http requests
 
 
 # Övningar och material
