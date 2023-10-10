@@ -15,15 +15,20 @@ Gör en komponent ( <gdpr /> ) som bara visas första ggn man laddar sidan. Spar
 ## Utmaning 1: You shall not pass
 Tekniker: router, vi-if-else, beforeMounted(), sessionStorage
 
-Gör en view ( <outside /> med en login comp som sparar en session ( auth ). Om session finns får man komma vidare till view:n <inside />. Om ej session finns kastar man tillbaka till <outside /> med hjälp av routern och beforeMounted hooken. Tips, se https://router.vuejs.org/guide/essentials/navigation.html för tips på hur du kan hantera routern i vue.
-
+1. Gör en view ( <outside /> med en login comp som sparar en session ( auth ).
+2. Gör en till komponent ( <inside /> ) som visar en dold text. Den dolda text ska döljas med v-if och visas endast om ett data värde authError är true.
+4. När användaren loggar in och skriver "fel" lössenord så visas ett error meddelande i <inside />, annars så visas det dolda meddelandet.
+  1. Kolla om användaren är authentiserad i mounted metoden.
 
 ## Utamning 2: You shan't pass
 Tekniker: vue-router, beforeMounted(), sessionStorage
 
 Gör övning två, men gör så att outside och inside är två olika undersidor till webbsidan.
-Se [named routes](https://router.vuejs.org/guide/essentials/named-routes.html) för tips på hur du kan omdirigera med vue
+Se [named routes](https://router.vuejs.org/guide/essentials/named-routes.html) för tips på hur du kan omdirigera med vue till specifika undersidor.
 
 Lösningsförslag med vue 2.
 https://repl.it/@JohanKivi/You-shall-not-pass
+
+Tips och övrigt material, se https://router.vuejs.org/guide/essentials/navigation.html
+
 
