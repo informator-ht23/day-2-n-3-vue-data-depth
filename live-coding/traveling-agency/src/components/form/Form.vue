@@ -15,6 +15,14 @@ export default {
   methods: {
     handleFormSubmit: function() {      
       console.table(this.travelInfo);
+
+      this.$router.push("/details");
+    },
+    swapDestinations: function() {
+      const temp = this.travelInfo.origin;
+      
+      this.travelInfo.origin = this.travelInfo.destination;
+      this.travelInfo.destination = temp;
     }
   }
 };
@@ -25,12 +33,17 @@ export default {
     <div class="form-row row-justify">
       <div>
         <label>Från</label>
-        <input v-model="travelInfo.origin" type="text" />
+        <input 
+          :class="{'warning': travelInfo.origin.length == 0}" 
+          v-model="travelInfo.origin" type="text" />
       </div>
-
+      <button @click.prevent="swapDestinations" class="exchange-btn">Byt</button>
       <div>
         <label>Till</label>
-        <input v-model="travelInfo.destination" type="text" />
+        <input 
+          :class="{'warning': travelInfo.destination.length == 0}"
+          v-model="travelInfo.destination" 
+          type="text" />
       </div>
     </div>
 
@@ -45,7 +58,7 @@ export default {
     </div>
 
     <div class="form-row--col">
-      <label>Förnamn</label>
+      <label>Efternamn</label>
       <input v-model="travelInfo.surname" type="text" />
     </div>
 
@@ -53,7 +66,7 @@ export default {
       <input v-model="travelInfo.acceptTerms" type="checkbox" /> <label>Godkänner <a href="#">villkoren</a></label>
     </div>
 
-    <button @click.prevent="handleFormSubmit" class="form-submit-btn">Boka Biljetter</button>
+    <button :disabled="!travelInfo.acceptTerms" @click.prevent="handleFormSubmit" class="form-submit-btn">Boka Biljetter</button>
   </form>
 </template>
 
@@ -78,5 +91,14 @@ export default {
 .row-justify > * {
   display: flex;
   flex-direction: column;
+}
+
+.exchange-btn {
+  margin: 0 .3em;
+  line-height: 2em;
+}
+
+.warning {
+  border-color: orange;
 }
 </style>

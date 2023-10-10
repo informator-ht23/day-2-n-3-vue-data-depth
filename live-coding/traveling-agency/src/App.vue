@@ -1,15 +1,15 @@
 <script>
 import Header from './components/header/Header.vue';
-import Form from './components/form/Form.vue';
+import { RouterView } from 'vue-router';
 
 export default {
-  components: { Header, Form }
+  components: { Header }
 }
 </script>
 
 <template>
   <Header />
-  <Form />
+  <RouterView />
 </template>
 
 <style>
