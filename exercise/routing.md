@@ -16,7 +16,7 @@ Klicka på en bok. Få upp mer info om boken i en ny view som overlay togglas me
 
 ### Steg 2
 Klicka på en bok. Få upp mer info om boken i en ny view med dynamic route.
-Hämta rätt bok i BookInfo.vue med hjälp av router.params. 
+Hämta rätt bok i BookInfo.vue med hjälp av route.params. 
 
 Ex. #/books/:id
 
