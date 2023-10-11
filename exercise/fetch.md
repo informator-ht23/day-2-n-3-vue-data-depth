@@ -59,7 +59,7 @@ Design att dra inspiration från. Använd följande design för att skapa dina k
 	"url": "https://swapi.dev/api/films/2/"
 }
 ```
-3. Implementera sedan designen ovan för en särskild människa i starwars universe.
+3. Implementera sedan designen ovan för en särskild människa i starwars universe. Exempelvis som i bildan ovanför.
 
 ## Utmaningar
 1. Lägg sedan till så att användaren kan "bläddra" mellan människor i starwars.
