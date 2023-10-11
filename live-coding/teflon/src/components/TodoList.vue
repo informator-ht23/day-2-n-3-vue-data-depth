@@ -8,43 +8,53 @@ export default {
   data() {
     return {
       title: 'Todo list title',
-      items: ['Bananer', 'Kaffe', 'Keso', 'Rolig keps med djurmotiv'],
-      counter: 4,
-      newTodoValue: 'hej',
+      items: [
+        {
+          value: 'Bananer',
+          isDone: false
+        },
+        {
+          value: 'Kaffe',
+          isDone: false
+        },
+        {
+          value: 'Keso',
+          isDone: false
+        },
+        {
+          value: 'Rolig keps med djurmotiv',
+          isDone: false
+        },
+      ],
+      newTodoValue: '',
     };
   },
   methods: {
-    handleCheckboxClick: function (event) {
-      if (event.target.checked) {
-        this.counter--;
-      } else {
-        this.counter++;
-      }
+    handleCheckboxClick: function (todo) {
+      todo.isDone = !todo.isDone;
     },
     handleNewTodo: function(event) {
-      this.items.push(this.newTodoValue);
-      this.counter++;
+      this.items.push({value: this.newTodoValue, isDone: false});
     },
     handleDeleteTodo: function(itemValue) {
-      // const todoIndex = this.items.indexOf(itemValue);
-      // this.items.splice(todoIndex, 1)
       this.items = this.items.filter(item => item !== itemValue);
-
-      const checkboxes = document.querySelectorAll('input[checked]');
-
-      this.counter = this.items.length - checkboxes.length;
     }
   },
+  computed: {
+    todoRemainingCounter() {
+      const todosRemaining = this.items.filter(item => !item.isDone);
+      return todosRemaining.length;
+    }
+  }
 };
 </script>
 
 <template>
   <h3>{{ this.title }}</h3>
-  <p v-if="counter > 0">Du har {{ counter }} todos kvar</p>
-  <!-- <TodoItem  v-for='item in this.items' :text='item'/> -->
+  <p v-if="todoRemainingCounter > 0">Du har {{ todoRemainingCounter }} todos kvar</p>
   <div v-for="item in this.items">
-    <input type="checkbox" @click="handleCheckboxClick" />
-    <label>{{ item }}</label>
+    <input type="checkbox" @click="handleCheckboxClick(item)" />
+    <label>{{ item.value }}</label>
     <button @click="handleDeleteTodo(item)" class="del-btn">X</button>
   </div>
 
