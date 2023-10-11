@@ -24,4 +24,6 @@ Målet med dagen är att kunna skapa SPA sidor med Vue Routing och använda fetc
 
 
 ## Kul att läsa på!
-1. [Navigation guards](https://router.vuejs.org/guide/advanced/navigation-guards.html)
+1. [Promises](https://www.youtube.com/watch?v=DHvZLI7Db8E)
+2. [Async/await](https://www.youtube.com/watch?v=V_Kr9OSfDeU)
+3. [Navigation guards](https://router.vuejs.org/guide/advanced/navigation-guards.html)
