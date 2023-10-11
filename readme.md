@@ -21,3 +21,7 @@ Målet med dagen är att kunna skapa SPA sidor med Vue Routing och använda fetc
 2. [Warmup med vue hooks](exercise/warmup-hooks.md)
 3. [Routing i vue](exercise/routing.md)
 4. [Fetcha i vue](exercise/fetch.md)
+
+
+## Kul att läsa på!
+1. [Navigation guards](https://router.vuejs.org/guide/advanced/navigation-guards.html)
