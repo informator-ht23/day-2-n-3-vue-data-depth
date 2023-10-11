@@ -10,13 +10,16 @@ export default {
         surname: '',
         acceptTerms: false,
       },
+      rememberMe: false
     };
   },
   methods: {
     handleFormSubmit: function() {      
       console.table(this.travelInfo);
 
-      this.$router.push("/details");
+      sessionStorage.setItem("ticket-info", JSON.stringify(this.travelInfo));
+      sessionStorage.setItem("remember-contact-info", this.rememberMe);
+      this.$router.push({name: "ticket-details"});
     },
     swapDestinations: function() {
       const temp = this.travelInfo.origin;
@@ -24,6 +27,20 @@ export default {
       this.travelInfo.origin = this.travelInfo.destination;
       this.travelInfo.destination = temp;
     }
+  },
+  mounted: function() {
+    let autoComplete = sessionStorage.getItem('remember-contact-info');
+    let info = sessionStorage.getItem('ticket-info');
+
+    autoComplete = JSON.parse(autoComplete);
+    
+    if(!autoComplete || info === undefined) return false; // guardian clause
+
+    info = JSON.parse(info);
+    info.acceptTerms = false;
+
+    this.travelInfo = info;
+    this.rememberMe = autoComplete;
   }
 };
 </script>
@@ -64,6 +81,10 @@ export default {
 
     <div class="form-row">
       <input v-model="travelInfo.acceptTerms" type="checkbox" /> <label>Godkänner <a href="#">villkoren</a></label>
+    </div>
+
+    <div class="form-row">
+      <input v-model="rememberMe" type="checkbox" /> <label>Kom ihåg mig</label>
     </div>
 
     <button :disabled="!travelInfo.acceptTerms" @click.prevent="handleFormSubmit" class="form-submit-btn">Boka Biljetter</button>

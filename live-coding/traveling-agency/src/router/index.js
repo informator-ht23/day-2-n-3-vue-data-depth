@@ -7,11 +7,13 @@ const router = createRouter({
   routes: [
     {
       path: "/ticket",
-      component: Form
+      name: "ticket-form",
+      component: Form,
     },
     {
       path: "/details",
-      component: Details
+      name: "ticket-details",
+      component: Details,
     }
   ]
 });
