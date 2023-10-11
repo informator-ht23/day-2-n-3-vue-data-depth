@@ -1,5 +1,8 @@
 <script>
+import Gdpr from '../cookie/Gdpr.vue';
+
 export default {
+  components: { Gdpr },
   data() {
     return {
       travelInfo: {
@@ -33,7 +36,7 @@ export default {
     let info = sessionStorage.getItem('ticket-info');
 
     autoComplete = JSON.parse(autoComplete);
-    
+
     if(!autoComplete || info === undefined) return false; // guardian clause
 
     info = JSON.parse(info);
@@ -89,6 +92,7 @@ export default {
 
     <button :disabled="!travelInfo.acceptTerms" @click.prevent="handleFormSubmit" class="form-submit-btn">Boka Biljetter</button>
   </form>
+
 </template>
 
 <style>

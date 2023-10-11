@@ -22,4 +22,5 @@ export default {
   <p>Travel class: {{ ticket.travelClass }}</p>
   <p>First name: {{ ticket.firstName }}</p>
   <p>Surname: {{ ticket.surname }}</p>
+  
 </template>
