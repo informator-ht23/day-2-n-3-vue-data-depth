@@ -3,7 +3,7 @@ tekniker: mounted(), fetch()
 
 ## Uppvärmning
 1. Börja med att bekanta dig med API:et. Du hämtar samtliga kategorier från länken https://swapi.dev/api/.
-2. Prova på att skapa en fetch för länken ovan, vad blir resultatet om du lägger ut det i konsol loggen?
+2. Prova på att skapa en fetch för länken ovan, vad blir resultatet om du lägger ut det i konsol loggen? Se hur du "hämtar" från länken nedanför.
 ```js
 function fetchCategories() {
   const response = await fetch("https://swapi.dev/api/");
